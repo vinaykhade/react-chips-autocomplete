@@ -8,7 +8,7 @@ const initialState = {
   userCompany: ''
 };
 
-export default function basicUserInfo (state = initialState, action) {
+export default function basicUserVault (state = initialState, action) {
   switch (action.type) {
     case UPDATE_USER_NAME:
       return { ...state, userName: action.payload };
