@@ -4,13 +4,12 @@ import { createBrowserHistory } from 'history';
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
 // Import all reducers
-import * as reducers from 'reducers';
+import reducers from 'reducers';
 
 // Configure reducer to store state at state.router
 // You can store it elsewhere by specifying a custom `routerStateSelector`
 // in the store enhancer below
 export const history = createBrowserHistory();
-const reducer = combineReducers({ ...reducers });
 
 const store = compose(
   // Enables your middleware:
@@ -18,6 +17,6 @@ const store = compose(
   applyMiddleware(routerMiddleware(history)),
   // Provides support for DevTools via Chrome extension
   window.devToolsExtension ? window.devToolsExtension() : f => f
-)(createStore)(connectRouter(history)(reducer));
+)(createStore)(connectRouter(history)(reducers));
 
 export default store;
