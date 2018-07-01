@@ -1,0 +1,1 @@
+export const PAN_REGEX = /[A-Z]{5}\d{4}[A-Z]{1}/g;

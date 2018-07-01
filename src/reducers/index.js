@@ -1,3 +1,10 @@
-export { default as app } from './app';
+import { combineReducers } from 'redux';
+import app from './app';
+import basicUserInfoVault from './basicUserInfoReducer';
 
-export default {};
+const reducers = combineReducers({
+	app: app,
+	basicUserInfoVault: basicUserInfoVault,
+});
+
+export default reducers;
