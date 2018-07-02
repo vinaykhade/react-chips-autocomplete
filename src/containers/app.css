@@ -1,0 +1,23 @@
+/*@import "../assets/styles/reset.scss";
+@import "../assets/styles/base.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+*/
+
+.form-group {
+	height: 100px;
+	label {
+		color: #657483;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: bold;
+	}
+	.form-control {
+		height: 38px;
+		padding: 0 10px;
+	}
+}
+
+.parentContainer {
+  font-family: 'Raleway', sans-serif;
+}

@@ -10,7 +10,6 @@ export const removeItemFromArray = (array, index) => [
 
 
 export default function bankAccountsVault (state = initialState, action) {
-  console.log("checking", action)
   switch (action.type) {
     case 'ADD_BANK_ACCOUNT':
       return R.prepend(action.payload, state);

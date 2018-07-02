@@ -6,6 +6,9 @@ export const isValidPanNumber = (panNumber) => {
 }
 
 export const checkIfPropExistsInObject = (inputObject, propName) => {
+	if(R.isNil(inputObject) || R.isEmpty(inputObject)) {
+		return false;
+	}
 	const hasProp = R.has(propName);
 	return hasProp(inputObject);
 }
