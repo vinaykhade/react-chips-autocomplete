@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500');
+
+$fontRaleway: 'Raleway', sans-serif;
+
+body {
+  font-family: $fontRaleway !important;
+}
+
+.form-group {
+	height: 100px;
+	label {
+		color: #657483;
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: bold;
+	}
+	.form-control {
+		height: 38px;
+		padding: 0 10px;
+	}
+}

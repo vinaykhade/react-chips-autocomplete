@@ -48,13 +48,14 @@ class BasicInfoForm extends Component {
 	render() {
 		const { basicUserInfoVault } = this.props;
 		const { inputError } = this.state;
-		console.log("checking inputError", inputError)
+
 		return(
-			<form>
+			<form className="container">
 				<div className="form-group">
 					<label>Name</label>
 					<input 
 						type="text"
+						className="form-control"
 						name="userName"
 						placeholder="Enter Your Name"
 						onChange={this.handleInputChange}

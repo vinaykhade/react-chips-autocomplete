@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/vinaykhade/.nvm/versions/node/v9.3.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add react-bootstrap
+  /Users/vinaykhade/.nvm/versions/node/v9.3.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add sass-loader
 
 PATH: 
   /Users/vinaykhade/.nvm/versions/node/v9.3.0/bin:/Users/vinaykhade/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin
@@ -97,11 +97,15 @@ npm manifest:
       "react": "^16.0.0",
       "react-bootstrap": "^0.32.1",
       "react-dom": "^16.0.0",
+      "react-dropzone": "^4.2.12",
+      "react-modal": "^3.4.5",
       "react-redux": "^5.0.6",
       "react-router": "^4.2.0",
       "redux": "^3.7.2",
       "redux-actions": "^2.4.0",
       "redux-form": "^7.4.2",
+      "redux-thunk": "^2.3.0",
+      "sass-loader": "^7.0.3",
       "style-loader": "^0.18.2",
       "superagent": "^3.8.3",
       "uppy": "^0.26.0",
@@ -713,6 +717,12 @@ Lockfile:
   atob@^2.1.1:
     version "2.1.1"
     resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.1.tgz#ae2d5a729477f289d60dd7f96a6314a22dd6c22a"
+  
+  attr-accept@^1.0.3:
+    version "1.1.3"
+    resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-1.1.3.tgz#48230c79f93790ef2775fcec4f0db0f5db41ca52"
+    dependencies:
+      core-js "^2.5.0"
   
   autoprefixer@^6.3.1:
     version "6.7.7"
@@ -1997,6 +2007,15 @@ Lockfile:
       strip-ansi "^3.0.1"
       wrap-ansi "^2.0.0"
   
+  clone-deep@^2.0.1:
+    version "2.0.2"
+    resolved "https://registry.yarnpkg.com/clone-deep/-/clone-deep-2.0.2.tgz#00db3a1e173656730d1188c3d6aced6d7ea97713"
+    dependencies:
+      for-own "^1.0.0"
+      is-plain-object "^2.0.4"
+      kind-of "^6.0.0"
+      shallow-clone "^1.0.0"
+  
   clone@^1.0.2:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
@@ -3181,6 +3200,10 @@ Lockfile:
       signal-exit "^3.0.0"
       strip-eof "^1.0.0"
   
+  exenv@^1.2.0:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+  
   expand-brackets@^0.1.4:
     version "0.1.5"
     resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -3475,6 +3498,10 @@ Lockfile:
     dependencies:
       debug "^3.1.0"
   
+  for-in@^0.1.3:
+    version "0.1.8"
+    resolved "https://registry.yarnpkg.com/for-in/-/for-in-0.1.8.tgz#d8773908e31256109952b1fdb9b3fa867d2775e1"
+  
   for-in@^1.0.1, for-in@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3482,6 +3509,12 @@ Lockfile:
   for-own@^0.1.4:
     version "0.1.5"
     resolved "https://registry.yarnpkg.com/for-own/-/for-own-0.1.5.tgz#5265c681a4f294dabbf17c9509b6763aa84510ce"
+    dependencies:
+      for-in "^1.0.1"
+  
+  for-own@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/for-own/-/for-own-1.0.0.tgz#c63332f415cedc4b04dbfe70cf836494c53cb44b"
     dependencies:
       for-in "^1.0.1"
   
@@ -4904,7 +4937,7 @@ Lockfile:
       json5 "^0.5.0"
       object-assign "^4.0.1"
   
-  loader-utils@^1.0.2, loader-utils@^1.1.0:
+  loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
     dependencies:
@@ -4959,6 +4992,10 @@ Lockfile:
   lodash.memoize@^4.1.2:
     version "4.1.2"
     resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
+  
+  lodash.tail@^4.1.1:
+    version "4.1.1"
+    resolved "https://registry.yarnpkg.com/lodash.tail/-/lodash.tail-4.1.1.tgz#d2333a36d9e7717c8ad2f7cacafec7c32b444664"
   
   lodash.throttle@^4.1.1:
     version "4.1.1"
@@ -5234,6 +5271,13 @@ Lockfile:
     dependencies:
       for-in "^1.0.2"
       is-extendable "^1.0.1"
+  
+  mixin-object@^2.0.1:
+    version "2.0.1"
+    resolved "https://registry.yarnpkg.com/mixin-object/-/mixin-object-2.0.1.tgz#4fb949441dab182540f1fe035ba60e1947a5e57e"
+    dependencies:
+      for-in "^0.1.3"
+      is-extendable "^0.1.1"
   
   mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
     version "0.5.1"
@@ -6205,7 +6249,7 @@ Lockfile:
       react-is "^16.3.2"
       warning "^3.0.0"
   
-  prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+  prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
     version "15.6.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
     dependencies:
@@ -6397,13 +6441,29 @@ Lockfile:
       object-assign "^4.1.1"
       prop-types "^15.6.0"
   
+  react-dropzone@^4.2.12:
+    version "4.2.12"
+    resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-4.2.12.tgz#b57f5b490102f24e1e8a970d46ef82f8cd71e222"
+    dependencies:
+      attr-accept "^1.0.3"
+      prop-types "^15.5.7"
+  
   react-is@^16.3.2, react-is@^16.4.1:
     version "16.4.1"
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
   
-  react-lifecycles-compat@^3.0.4:
+  react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
     version "3.0.4"
     resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+  
+  react-modal@^3.4.5:
+    version "3.4.5"
+    resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.4.5.tgz#75a7eefb8f4c8247278d5ce1c41249d7785d9f69"
+    dependencies:
+      exenv "^1.2.0"
+      prop-types "^15.5.10"
+      react-lifecycles-compat "^3.0.0"
+      warning "^3.0.0"
   
   react-overlays@^0.8.0:
     version "0.8.3"
@@ -6623,6 +6683,10 @@ Lockfile:
       lodash-es "^4.17.10"
       prop-types "^15.6.1"
       react-lifecycles-compat "^3.0.4"
+  
+  redux-thunk@^2.3.0:
+    version "2.3.0"
+    resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
   
   redux@^3.7.2:
     version "3.7.2"
@@ -6894,6 +6958,16 @@ Lockfile:
     optionalDependencies:
       fsevents "^1.2.3"
   
+  sass-loader@^7.0.3:
+    version "7.0.3"
+    resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-7.0.3.tgz#6ca10871a1cc7549f8143db5a9958242c4e4ca2a"
+    dependencies:
+      clone-deep "^2.0.1"
+      loader-utils "^1.0.1"
+      lodash.tail "^4.1.1"
+      neo-async "^2.5.0"
+      pify "^3.0.0"
+  
   sax@^1.2.1, sax@^1.2.4, sax@~1.2.1:
     version "1.2.4"
     resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
@@ -7012,6 +7086,14 @@ Lockfile:
     dependencies:
       inherits "^2.0.1"
       safe-buffer "^5.0.1"
+  
+  shallow-clone@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/shallow-clone/-/shallow-clone-1.0.0.tgz#4480cd06e882ef68b2ad88a3ea54832e2c48b571"
+    dependencies:
+      is-extendable "^0.1.1"
+      kind-of "^5.0.0"
+      mixin-object "^2.0.1"
   
   shebang-command@^1.2.0:
     version "1.2.0"

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { loadApp } from 'actions/app';
-import styles from './app.css';
+import './app.scss';
 import MultiStageFrom from './multiStageForm';
 
 type Props = {
@@ -10,15 +10,9 @@ type Props = {
 }
 
 export class AppContainer extends Component {
-  // componentDidMount() {
-  //   this.props.dispatch(loadApp());
-  // }
-
-  props: Props;
-
   render() {
     return (
-      <div className={styles.container}>
+      <div>
         <MultiStageFrom />
       </div>
     );
