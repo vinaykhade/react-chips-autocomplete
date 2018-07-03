@@ -38,25 +38,27 @@ export class AppContainer extends Component {
   }
 
   keyDown = (event) => {
-    let { chips, inputValue, chipSelectedToRemove, suggestionsList } = this.state;
-    if(event.target.value === '' && chips.length > 0) {
-      const key = event.keyCode || event.charCode;
-      if(key === 8 || key === 46) {
-        if(chipSelectedToRemove) {
-          let filteredChips = Object.assign({}, chips);
-          filteredChips = filteredChips.slice(-1)[0];
-          this.setState({
-            chipSelectedToRemove: false,
-            suggestionsList: suggestionsList.concat(chips[chips.length-1]),
-            chips: filteredChips,
-          })
-          document.getElementById("chipsList").lastChild.classList.remove('selected');
-        } else if(!chipSelectedToRemove) {
-          this.setState({ chipSelectedToRemove: true })
-          document.getElementById("chipsList").lastChild.classList.add('selected');
-        }
-      }
-    } 
+    // TODO: on backspace remove last chip
+
+    // let { chips, inputValue, chipSelectedToRemove, suggestionsList } = this.state;
+    // if(event.target.value === '' && chips.length > 0) {
+    //   const key = event.keyCode || event.charCode;
+    //   if(key === 8 || key === 46) {
+    //     if(chipSelectedToRemove) {
+    //       let filteredChips = Object.assign({}, chips);
+    //       filteredChips = filteredChips.slice(-1)[0];
+    //       this.setState({
+    //         chipSelectedToRemove: false,
+    //         suggestionsList: suggestionsList.concat(chips[chips.length-1]),
+    //         chips: filteredChips,
+    //       })
+    //       document.getElementById("chipsList").lastChild.classList.remove('selected');
+    //     } else if(!chipSelectedToRemove) {
+    //       this.setState({ chipSelectedToRemove: true })
+    //       document.getElementById("chipsList").lastChild.classList.add('selected');
+    //     }
+    //   }
+    // } 
   }
 
   handleInputChange = (event) => {
@@ -101,8 +103,6 @@ export class AppContainer extends Component {
 
   render() {
     const { chips, suggestions, suggestionsList, inputValue } = this.state;
-    console.log("checking suggestionsList", suggestionsList)
-    console.log("checking chips", chips)
     return (
         <div className={styles.parentContainer}>
           {
