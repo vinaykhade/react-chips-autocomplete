@@ -48,6 +48,7 @@
 
 .suggestionsList {
 	list-style-type: none;
+	margin: 0;
 	padding-left: 0;
 	position: absolute;
 	top: 100%;
